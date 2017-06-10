@@ -1,0 +1,36 @@
+body{
+    background-image:url(drum.jpg);
+    background-size:cover;
+    display:grid;
+    grid-template-rows: repeat(5,[row] 1fr);
+    grid-template-columns: repeat(9,[col] auto);
+    grid-row-gap: 15px;
+    grid-column-gap:1.6em;
+}
+.keys{
+    grid-row: row 3/span 1;
+    grid-column: col 1/span 9;
+    align:center;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+}
+.key{
+    flex-basis: auto;
+    height:100px;
+    width:100px;
+    border:1;
+    transition: all 0.07s ease;
+    border-style:solid;
+    border-color: white;
+    font-size:4em;
+    color: white;
+}
+span{
+    font-size:16px;
+}
+.playing{
+    transform:scale(1.1);
+    border-color:#FFC107;
+}

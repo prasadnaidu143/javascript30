@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <link href="drums.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <title>sound js</title>
+  <body>
+    <div class="keys">
+      <div class="key" data-key="65">
+        <kbd>A</kbd>
+	<br>
+	<span>clap</span>
+      </div>
+      <div class="key" data-key="83">
+         <kbd>S</kbd>
+      </div>
+      <div class="key" data-key="68">
+         <kbd>D</kbd>
+      </div>
+      <div class="key" data-key="70">
+        <kbd>F</kbd>
+      </div>
+      <div class="key" data-key="71">
+        <kbd>G</kbd>
+      </div>
+      <div class="key" data-key="72">
+        <kbd>H</kbd>
+      </div>
+      
+      <div class="key" data-key="74">
+        <kbd>J</kbd>
+      </div>
+      
+      <div class="key" data-key="75">
+        <kbd>K</kbd>
+      </div>
+    
+      
+      <div class="key" data-key="76">
+        <kbd>L</kbd>
+      </div>
+    
+    </div>
+    <audio data-key="65" src="clap.wav" />
+      <audio data-key="83" src="boom.wav" />
+	<audio data-key="68" src="kick.wav" />
+	  <audio data-key="70" src="tink.wav" />
+	    <audio data-key="71" src="tom.wav" />
+	      <audio data-key="72" src="hihat.wav" />
+		<audio data-key="74" src="openhat.wav" />
+		  <audio data-key="75" src="snare.wav" />
+		    <audio data-key="76" src="ride.wav" />
+		      <script>
+	  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+		      </script>	      
+    </body>
+</html>
