@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link href="praticeWithVariables.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>CSS with Variables</h1>
+    <div class="container">
+    
+      <div class="blur">
+	<label>
+	 Blur:  <input type="range" name="blur" min="0" max="20" id="blur" data-sizing="px">
+	  </label>
+      </div>
+      <div class="transform">
+	<label>
+         Transform: <input type="range" id="scale" name="scale" min="0.5" max="1.5" step="0.001">
+	</label>
+      </div>
+      <div class="image">
+       <img src="drum.jpg">
+      </div>
+    </div>
+
+    <script>
+      const inputs=document.querySelectorAll(`.container input`);
+      inputs.forEach(input=>input.addEventListener('change',change));
+      function change(){
+      console.log(this.dataset.sizing);
+      const suffix=this.dataset.sizing || '';
+      console.log(this.value+suffix);
+      document.documentElement.style.setProperty(`--${this.id}`,this.value+suffix);
+      }
+      </script>
+  </body>
+</html>

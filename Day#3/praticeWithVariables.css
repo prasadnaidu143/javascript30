@@ -1,0 +1,39 @@
+:root{
+    --blur: 5px;
+    --scale: 1.0;
+}
+img{
+    width:40%;
+    height:auto;
+    filter : blur(var(--blur));
+    transform :scale(var(--scale));
+}
+html{
+    height:100%;}
+
+body{
+    height:100%;
+    display:grid;
+    grid-template-columns:repeat(12, [col] 1fr);
+    grid-template-rows:repeat(10, [row] auto);
+    grid-column-gap:1.6em;
+    grid-row-gap:10px;
+}
+h1{
+    grid-row: row 2/span 1;
+     grid-column:col 3/span 10;
+}
+.container{
+    grid-row:row 3/span 6;
+    grid-column:col 3/span 10;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.blur{
+    flex:1 0 0
+}
+.transform{
+    flex:1 0 0;
+}
+
