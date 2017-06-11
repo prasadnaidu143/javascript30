@@ -1,0 +1,60 @@
+body{
+    background:linear-gradient(blue,black);
+    background-repeat:no-repeat;
+    display:grid;
+    grid-template-rows:repeat(5,[row] 1fr);
+    grid-template-columns: repeat(12,[col] auto);
+    grid-row-gap:10px;
+    grif-column-gap:1.5em;
+}
+html{
+    height:100%;
+}
+.clock{
+    grid-row: row 3/span 2;
+    grid-column:col 7;
+    border-radius:100%;
+    border:6;
+    border-style:solid;
+    border-color:white;
+    width:200px;
+    height:200px;
+    
+}
+.sec{
+    width:90px;
+    height:4px;
+    background:black;
+    margin-top:100px;
+    position:absolute;
+    transition:all 0.05s;
+    transition-timing-function:ease-in-out;
+    transform-origin:100%;
+    transform:rotate(90deg);
+    
+}
+.hour{
+    width:88px;
+    height:4.5px;
+    background:black;
+    margin-top:100px;
+    position:absolute;
+    transform-origin:100%;
+    transform:rotate(90deg);
+    transition:all 0.05s;
+    transition-timing-function:ease-in-out;
+      
+
+}
+.min{
+    width:90px;
+    height:4px;
+    background:black;
+    margin-top:100px;
+    position:absolute;
+    transition-timing-function:ease-in-out;
+    transform:rotate(90deg);
+    transition:all 0.005s;
+    transform-origin:100%;
+
+}

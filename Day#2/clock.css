@@ -1,0 +1,58 @@
+body{
+    background:linear-gradient(blue,black);
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    margin:0px;
+}
+html{
+    height:100%;
+}
+.clock{
+    position:relative;
+    border-radius:100%;
+    border-width:5px;
+    border-style:solid;
+    border-color:white;
+    width:200px;
+    height:200px;
+    
+}
+.sec{
+    width:90px;
+    height:4px;
+    background:black;
+    margin-top:100px;
+    position:absolute;
+    transition:all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform-origin:100%;
+    transform:rotate(90deg);
+    
+}
+.hour{
+    width:88px;
+    height:4.5px;
+    background:black;
+    margin-top:100px;
+    position:absolute;
+    transform-origin:100%;
+    transform:rotate(90deg);
+    transition:all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+
+}
+.min{
+    width:90px;
+    height:4px;
+    background:black;
+    margin-top:100px;
+    position:absolute;
+     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform:rotate(90deg);
+    transition:all 0.005s;
+    transform-origin:100%;
+
+}
