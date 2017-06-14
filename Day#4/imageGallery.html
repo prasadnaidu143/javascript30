@@ -1,0 +1,23 @@
+<html>
+  <head><link href="imageGallery.css" type="text/css" rel="stylesheet">
+    <body>
+      <div class="container">
+	<div class="panels">
+          <div class="panel1 panel"><p>Lets</p></div>
+	  <div class="panel2 panel"><p>Start</p></div>
+	  <div class="panel3 panel"><p>Again</p></div>
+	  <div class="panel4 panel"><p>And</p></div>
+	  <div class="panel5 panel"><p>Drive</p></div>  
+	</div>
+      </div>
+      <script>
+	const panels=document.querySelectorAll(`.panel`);
+	panels.forEach(panel=>panel.addEventListener('click',popup));
+	function popup()
+	{
+         	console.log("hello");
+	  this.classList.toggle('open');
+	}
+	</script>
+      </body>
+  </html>

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One|Cabin+Sketch|Rock+Salt');
+.panels{
+    display:flex;
+    flex-flow: row nowrap;
+    align-items:stretch;
+     height:100%;
+}
+.panels > div{
+    flex: 1 0 auto;
+    transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.7s;
+}
+.panel{
+     display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.panel > *{
+    flex:1 0 0;
+    font-size:48px;
+    font-family:'Cabin Sketch';
+    align-self:center;
+}
+
+.panel1{
+    background-image:url("1");
+}
+.panel2{
+    background-image:url("2");
+}
+.panel3{
+    background-image:url("3");
+}
+.panel4{
+    background-image:url("4");
+}
+.panel5{
+    background-image:url("5");
+}
+.panel.open{
+    flex: 5;
+    font-size:56px;
+}
+body{
+    margin:0;
+}
