@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charcter="utf8">
+    <link href="checkbox.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+	<input type="checkbox">Harry styles</div>
+       <div class="item">
+	 <input type="checkbox">Louis tomlinson</div>
+        <div class="item">
+	  <input type="checkbox">Niall Horan</div>
+	 <div class="item">
+	   <input type="checkbox">Ariana grande</div>
+	  <div class="item">
+	    <input type="checkbox">Troye sivan</div>
+	   <div class="item">
+	<input type="checkbox">Hayley kiyoko</div>
+    </div>
+    <script>
+      const checkboxes=document.querySelectorAll(`.item input`);
+      var lastChecked;
+      let inBetween=false;
+         function update(e){
+          if(e.shiftKey && this.checked)
+            {
+             checkboxes.forEach(checkbox=>{
+                   if(checkbox==this||checkbox==lastChecked)
+                        inBetween=!inBetween;
+                if(inBetween)
+                checkbox.checked=true;
+                console.log(checkbox);
+             });
+            }
+          lastChecked=this;
+      }
+      function unCheck()
+      {
+      checkboxes.forEach(checkbox=>{checkbox.checked=false;});
+      }
+      
+      checkboxes.forEach(checkbox=>checkbox.addEventListener('click',update));
+      window.addEventListener('onload',unCheck);
+     </script>
+    </body>
+</html>

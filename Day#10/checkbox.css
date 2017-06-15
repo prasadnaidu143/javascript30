@@ -1,0 +1,24 @@
+body{
+    margin:0px;
+    background:#f39c12;
+    height:100%;
+}
+html{
+    height:50%;
+}
+.container{
+    height:100%;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:center;
+    margin-top:20px;
+}
+.item{
+    background:white;
+    width:200px;
+    height:auto;
+    flex: 1 0 auto;
+    align-self:center;
+    border-style:dashed;
+    border-width:1px;
+}

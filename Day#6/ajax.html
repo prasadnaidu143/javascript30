@@ -1,0 +1,35 @@
+<html>
+  <head><link href="ajax.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Find City and Information</h1>
+      <label><input type="text" name="text" placeholder="Enter city or state">
+      </label>
+      <ul class="suggestions">
+	</ul>
+    </div>
+    <script>
+      const arr=[];
+      const suggestions=document.querySelector(".suggestions");
+      const endpoint="https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+      fetch(endpoint).then(blob=>blob.json()).then(data=>arr.push(...data));
+      function find(match){
+      const regex=new RegExp(match,'gi');
+      return arr.filter(place=>{return place["city"].match(regex)||place["state"].match(regex)});
+      }
+      function collect(){
+      const match=this.value;
+      const cities=find(match);
+      const html= cities.map(place=>
+        {
+          return `<li><span class="span">${place.city},${place.state}</span></li>
+              <li><span class="span">${place.population}</span></li>`
+	
+	      });
+	 suggestions.innerHTML=html;
+	}
+      window.document.querySelector(`input`).addEventListener('change',collect);
+      </script>
+    </body>
+  </html>

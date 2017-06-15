@@ -1,0 +1,35 @@
+body{
+    margin:0;
+    background-color:#f1c40f;
+}
+.container{
+    margin:10px;
+    display:flex;
+    height:100%;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction:column;
+}
+.suggestions{
+    background:white;
+    color:black;
+}
+ul{
+    list-style-type:none;
+    scroll-behavior:smooth;
+   
+}
+li{
+    font-family:'Raleway';
+}
+
+h1{
+    color:white;
+    font-family:'Quicksand';
+   
+}
+label input{
+    flex:1 0 auto;
+ 
+}
