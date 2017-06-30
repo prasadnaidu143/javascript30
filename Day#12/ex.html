@@ -1,0 +1,69 @@
+<html>
+  <title>sample</title>
+  <head>
+    <link href="ex.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="https://cornify.com/js/cornify.js"></script>
+  </head>
+  <body>
+ <!--  <nav> <div id="b"> <div id="b1">
+	<ul>
+	  <li><a href="#">Home</a></li>
+	  <li><a href="#">About</a></li>
+	   <li><a href="#">Contact</a></li>
+	  </ul>
+       </div>
+       </nav>
+     </div>-->
+
+ <div class="container">
+   <div class="box1">
+     <div class="header">
+       Polyvore
+       <nav>
+	 <ul>
+	   </ul>
+	 </nav>
+	 </div>
+   </div>
+   <div class="box2">
+    My Feed  Trending   Outfits  Women  Dresses  Shoes   Accessories  Beauty  Home   Men  Sale<hr>
+   </div>
+   <div class="box3">
+   </div>
+   <div class="box4">
+   </div>
+   <div class="box5">
+   </div>
+   <div class="box6">
+   </div>
+   <div class="box7">
+   </div>
+   <div class="box8">
+   </div>
+   <div class="box9">
+   </div>
+   <div class="box10">
+     </div>
+     
+   
+   </div>
+   
+   
+  </body>
+  <script>
+    const arr=[];
+    const secretCode='tulika';
+    function change(e){
+    console.log(e.key);
+    arr.push(e.key);
+    arr.splice(-secretCode.lenght-1,arr.lenght-secretCode.lenght);
+    console.log(arr);
+    if(arr.join('').includes(secretCode))
+    {
+    cornify_add();
+    //console.log('ding ding ding!')
+    }
+    }
+    window.addEventListener('keyup',change);
+    </script>
+</html>
