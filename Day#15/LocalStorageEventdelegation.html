@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <style>
+  *,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*,*:before,*:after{
+  margin:0px;
+  padding:0px;
+}
+    body{
+      background: url('img.jpg');
+      /*filter: opacity(80%);*/
+
+      font-family: sans-serif;
+    }
+    .container{
+      margin: 100px auto;
+      width:30%;
+      background:white;
+      padding: 20px 10px 20px 40px;
+    }
+    ul{
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+ <div class="container">
+   <div class="list">
+     <h3>Add Items</h3>
+     <ul id="list">
+     </ul>
+   </div>
+   <div class="form">
+     <form name="items">
+         <input type="text" id="add" name="items"/>
+         <input type="submit" value="Add item+" />
+         <input type="button" value="Clear" />
+     </form>
+   </div>
+ </div>
+<script>
+  const form=document.querySelector(`form`);
+  const list=document.getElementById(`list`);
+  const clear=document.querySelector(`input[type='button']`);
+  var items=localStorage.getItem('items')?JSON.parse(localStorage.getItem('items')) : [];
+  function listDisplay(items=[]){
+    document.querySelector(`ul`).innerHTML=items.map((x,i)=>{
+     return `<li>
+     <input type="checkbox" data-index=${i} id="item${i}" ${ x.done ? 'checked' : ''} />
+     <label for="item${i}">${x.name}</label>
+     </li>`;
+   }).join('');
+  //  console.log(html_list);
+  //  document.querySelector(`ul`).insertAdjacentHTML('beforeend',html_list);
+  }
+  function addItems(e){
+    e.preventDefault();
+    var name=(this.querySelector(`[name='items']`)).value;
+    var item={
+       name,
+       done:false
+    }
+    items.push(item);
+    console.log(items);
+    localStorage.setItem('items',JSON.stringify(items));
+    this.reset();
+    listDisplay(items);
+    return false;
+  }
+  function update(){
+
+  }
+  form.addEventListener('submit',addItems);
+
+  listDisplay(items);
+  function update(e){
+    console.log(e.target);
+    if (!e.target.matches('input'))
+    return;
+    else {
+      var el=e.target;
+      var id=el.dataset.index;
+      items[id]['done']=!items[id]['done'];
+      localStorage.setItem('items',JSON.stringify(items));
+      listDisplay(items);
+    }
+  }
+  function clearLS(e){
+    e.stopPropagation();
+    localStorage.setItem('items','');
+    items=[];
+    list.innerHTML='';
+  }
+  list.addEventListener('click',update);
+  clear.addEventListener('click',clearLS);
+</script>
+</body>
+</html>
