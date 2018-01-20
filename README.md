@@ -16,6 +16,11 @@ JavaScript30 Days Challenge:ledger:
 ## Ajax
 ![js4](https://user-images.githubusercontent.com/25117249/35182894-defe496c-fe02-11e7-8c51-44f9fcd95b97.gif)
 
+
+## Sliding Animation
+![js5](https://user-images.githubusercontent.com/25117249/35183005-cb34191e-fe04-11e7-814a-416fe09d0b28.gif)
+
+
 ## Selecting radio-button using shift
 ![js6](https://user-images.githubusercontent.com/25117249/35182895-df5a5cb6-fe02-11e7-9de2-4914e7c8b795.gif)
 
